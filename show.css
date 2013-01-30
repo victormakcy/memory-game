@@ -1,0 +1,42 @@
+#play-window{
+  position:absolute;
+  top:130px;
+  display:none;
+}
+
+.game-block{
+  border:1px solid #000;
+  position:absolute;
+  width:130px;
+  height:130px;
+  margin-bottom: 10px;
+}
+
+#game-block1{
+  left:555px;
+}
+
+#game-block2{
+  left:400px;
+  top:110px;
+}
+
+#game-block3{
+  left:400px;
+  top:250px;
+}
+
+#game-block4{
+  left:555px;
+  top:360px;
+}
+
+#game-block5{
+  left:709px;
+  top:110px;
+}
+
+#game-block6{
+  left:709px;
+  top:250px;
+}
