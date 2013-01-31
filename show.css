@@ -14,29 +14,35 @@
 
 #game-block1{
   left:555px;
+  border-color:#0f7ac5;
 }
 
 #game-block2{
   left:400px;
   top:110px;
+  border-color:#14a88e;
 }
 
 #game-block3{
   left:400px;
   top:250px;
+  border-color:#3fdf29;
 }
 
 #game-block4{
   left:555px;
   top:360px;
+  border-color:#aa2918;
 }
 
 #game-block5{
   left:709px;
   top:110px;
+  border-color:#dc30da;
 }
 
 #game-block6{
   left:709px;
   top:250px;
+  border-color:#901fe7;
 }
