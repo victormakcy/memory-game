@@ -1,7 +1,31 @@
 #play-window{
   position:absolute;
-  top:130px;
+  display:block;
   display:none;
+}
+
+#logo{
+  font-family: 'Junge', serif;
+  font-size: 70px;
+  position:absolute;
+  top:30%;
+  left:27%;
+}
+
+#start{
+  font-family: 'Ranchers', cursive;
+  font-size:50px;
+  cursor:pointer;
+  position:absolute;
+  top:45%;
+  left:45%;
+}
+
+#start-window{
+  display:block;
+  position:relative;
+  width:100%;
+  height:100%;
 }
 
 .game-block{
@@ -14,35 +38,36 @@
 
 #game-block1{
   left:555px;
+  top: 130px;
   border-color:#0f7ac5;
 }
 
 #game-block2{
   left:400px;
-  top:110px;
+  top:240px;
   border-color:#14a88e;
 }
 
 #game-block3{
   left:400px;
-  top:250px;
+  top:380px;
   border-color:#3fdf29;
 }
 
 #game-block4{
   left:555px;
-  top:360px;
+  top:490px;
   border-color:#aa2918;
 }
 
 #game-block5{
   left:709px;
-  top:110px;
+  top:240px;
   border-color:#dc30da;
 }
 
 #game-block6{
   left:709px;
-  top:250px;
+  top:380px;
   border-color:#901fe7;
 }
