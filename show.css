@@ -7,18 +7,16 @@
 #logo{
   font-family: 'Junge', serif;
   font-size: 70px;
-  position:absolute;
-  top:30%;
-  left:27%;
+  padding-top:20%;
+  text-align: center;
 }
 
 #start{
   font-family: 'Ranchers', cursive;
   font-size:50px;
   cursor:pointer;
-  position:absolute;
-  top:45%;
-  left:45%;
+  padding-top:1%;
+  text-align: center;
 }
 
 #start-window{
@@ -37,37 +35,46 @@
 }
 
 #game-block1{
-  left:555px;
-  top: 130px;
+  left:325px;
+  top: 100px;
   border-color:#0f7ac5;
 }
 
 #game-block2{
-  left:400px;
-  top:240px;
+  left:170px;
+  top:210px;
   border-color:#14a88e;
 }
 
 #game-block3{
-  left:400px;
-  top:380px;
+  left:170px;
+  top:350px;
   border-color:#3fdf29;
 }
 
 #game-block4{
-  left:555px;
-  top:490px;
+  left:325px;
+  top:460px;
   border-color:#aa2918;
 }
 
 #game-block5{
-  left:709px;
-  top:240px;
+  left:479px;
+  top:210px;
   border-color:#dc30da;
 }
 
 #game-block6{
-  left:709px;
-  top:380px;
+  left:479px;
+  top:350px;
   border-color:#901fe7;
+}
+
+#quit{
+  font-family: 'Ranchers', cursive;
+  font-size:50px;
+  position:absolute;
+  left:700px;
+  top:500px;
+  cursor:pointer;
 }
