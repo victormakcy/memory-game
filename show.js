@@ -1,4 +1,5 @@
 var level = 0;
+var score = 0;
 var playersTurn = false;
 var timer
 var patternArray = [];
@@ -49,9 +50,12 @@ function displayPattern(){
 	var gameBlockID;
 	var color;
 	numPlayerClicks = 0;
-	level = level + 1;
 	patternArray = [];
 	playerTurn = false;
+	level = level + 1;
+	$("#level").text(level + "/20")
+	$("#score").text(score)
+	
 	timer = setInterval(function(){
 		randNumber = Math.floor((Math.random() * 6) + 1);
 		gameBlockID = "#game-block" + randNumber;
@@ -67,8 +71,8 @@ function displayPattern(){
 				playersTurn = true;
 				return;
 			}
-		}, 2000);
-  }, 2500);
+		}, 800);
+  }, 1000);
 };
 
 function comparePattern(){
@@ -83,6 +87,7 @@ function comparePattern(){
 
 function nextLevel(){
 	alert("level up!");
+	score = score + 1.5*level*1100
 	displayPattern();
 }
 

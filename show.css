@@ -2,6 +2,8 @@
   position:absolute;
   display:block;
   display:none;
+  height:100%;
+  width:100%;
 }
 
 #logo{
@@ -68,6 +70,22 @@
   left:479px;
   top:350px;
   border-color:#901fe7;
+}
+
+#status-window{
+  position:absolute;
+  left:650px;
+  top:150px;
+}
+
+.level{
+  font-family: helvetica;
+  font-size: 40px;
+}
+
+.score{
+  font-family: helvetica;
+  font-size: 40px;
 }
 
 #quit{
