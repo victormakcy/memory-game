@@ -78,14 +78,18 @@
   top:150px;
 }
 
-.level{
+.level, .score, #comp-turn, #player-turn{
   font-family: helvetica;
   font-size: 40px;
 }
 
-.score{
-  font-family: helvetica;
-  font-size: 40px;
+#comp-turn, #player-turn{
+  position: relative;
+  top:80px;
+}
+
+#player-turn{
+  display:none;
 }
 
 #quit{

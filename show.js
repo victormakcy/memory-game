@@ -1,10 +1,11 @@
 var level = 0;
 var score = 0;
 var playersTurn = false;
-var timer
+var timer;
 var patternArray = [];
 var userChoicesArray = [];
 var numPlayerClicks = 0;
+var clickedBlock;
 
 $(document).ready(function(){  
 	$("#start").click(function(){
@@ -16,6 +17,7 @@ $(document).ready(function(){
 
 	$("#quit").click(function(){
 		level = 0;
+		score = 0;
 		playerTurn = false;
 		clearInterval(timer);
 	  $("#play-window").css("display","none");
@@ -24,20 +26,21 @@ $(document).ready(function(){
 
 	$(".game-block").mousedown(function(){
 		if (playersTurn == false){
-			alert("not your turn");
+			alert("It is not your turn!");
 		}else{
 			$(this).css("background-color", $(this).css("border-color"));
+			clickedBlock = this;
 		}
 	});
 
-	$(".game-block").mouseup(function(){
+	$(document).mouseup(function(){
 		if(playersTurn == true){
-			$(this).css("background-color", "#FFF"); 
+			$(clickedBlock).css("background-color", "#FFF"); 
 			if(numPlayerClicks == (level + 1)){
-				userChoicesArray[numPlayerClicks] = "#" + this.id
+				userChoicesArray[numPlayerClicks] = "#" + clickedBlock.id
 				comparePattern();
 			}else{
-				userChoicesArray[numPlayerClicks] = "#" + this.id
+				userChoicesArray[numPlayerClicks] = "#" + clickedBlock.id
 				numPlayerClicks++;
 			}
 		}
@@ -55,7 +58,7 @@ function displayPattern(){
 	level = level + 1;
 	$("#level").text(level + "/20")
 	$("#score").text(score)
-	
+
 	timer = setInterval(function(){
 		randNumber = Math.floor((Math.random() * 6) + 1);
 		gameBlockID = "#game-block" + randNumber;
@@ -66,9 +69,10 @@ function displayPattern(){
 		  $(gameBlockID).css("background-color", "#FFF");
 			i = i + 1;
 			if(i == (level + 2)){
-				console.log(patternArray);
 				clearInterval(timer);
 				playersTurn = true;
+				$("#comp-turn").css("display","none")
+				$("#player-turn").css("display","block")
 				return;
 			}
 		}, 800);
@@ -86,15 +90,22 @@ function comparePattern(){
 }
 
 function nextLevel(){
-	alert("level up!");
+	alert("Level up!");
 	score = score + 1.5*level*1100
+	clickedBlock = null;
+	$("#comp-turn").css("display","block")
+	$("#player-turn").css("display","none")
 	displayPattern();
 }
 
 function gameOver(){
-	alert("u lose!");
+	alert("Incorrect! You lose! Your score is " + score);
 	level = 0;
+	score = 0;
 	playerTurn = false;
+	clickedBlock = null;
+	$("#comp-turn").css("display","block")
+	$("#player-turn").css("display","none")
   $("#play-window").css("display","none");
   $("#start-window").css("display","block");
 }
