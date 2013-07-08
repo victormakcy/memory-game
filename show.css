@@ -1,11 +1,4 @@
-#play-window{
-  position:absolute;
-  display:block;
-  display:none;
-  height:100%;
-  width:100%;
-}
-
+/* Start screen styles */
 #logo{
   font-family: 'Junge', serif;
   font-size: 70px;
@@ -16,9 +9,13 @@
 #start{
   font-family: 'Ranchers', cursive;
   font-size:50px;
-  cursor:pointer;
   padding-top:1%;
   text-align: center;
+}
+
+#start:hover, #quit:hover {
+	cursor: pointer;
+	color:#4e4e4e;
 }
 
 #start-window{
@@ -26,6 +23,15 @@
   position:relative;
   width:100%;
   height:100%;
+}
+
+/* Main game styles */
+#play-window{
+  position:absolute;
+  display:block;
+  display:none;
+  height:100%;
+  width:100%;
 }
 
 .game-block{
@@ -80,7 +86,7 @@
 
 .level, .score, #comp-turn, #player-turn{
   font-family: helvetica;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 #comp-turn, #player-turn{
@@ -98,5 +104,4 @@
   position:absolute;
   left:700px;
   top:500px;
-  cursor:pointer;
 }
