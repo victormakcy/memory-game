@@ -5,9 +5,9 @@ var timer;
 var patternArray = [];
 var userChoicesArray = [];
 var numPlayerClicks = 0;
-var clickedBlock;
 
-$(document).ready(function(){  
+$(document).ready(function() {
+	/* Click the start button. */
 	$("#start").click(function(){
 	  $("#play-window").css("display","block");
 	  $("#start-window").css("display","none");
@@ -15,6 +15,7 @@ $(document).ready(function(){
 	  displayPattern();
 	});
 
+    /* Click the quit button. */
 	$("#quit").click(function(){
 		level = 0;
 		score = 0;
@@ -24,23 +25,25 @@ $(document).ready(function(){
 	  $("#start-window").css("display","block");
 	});
 
+	/* Click a game block. */
 	$(".game-block").mousedown(function(){
-		if (playersTurn == false){
-			alert("It is not your turn!");
-		}else{
-			$(this).css("background-color", $(this).css("border-color"));
-			clickedBlock = this;
-		}
-	});
-
-	$(document).mouseup(function(){
-		if(playersTurn == true){
-			$(clickedBlock).css("background-color", "#FFF"); 
+		if (playersTurn) {
+			var gameBlockID = '#' + this.id;
+		    var highlightColor = $(this).css('border-color');
+		    
+		    // Animate the background-color
+		    // Can be done using JQuery UI Color Plugin, but for now, use timeout
+		    $(gameBlockID).css('background-color', $(gameBlockID).css('border-color'));
+		    
+		    // Animate back to white in 400ms
+		    setTimeout(function() { $(gameBlockID).css('background-color', '#FFFFFF'); }, 400);
+			
+			// Compare
 			if(numPlayerClicks == (level + 1)){
-				userChoicesArray[numPlayerClicks] = "#" + clickedBlock.id
+				userChoicesArray[numPlayerClicks] = gameBlockID
 				comparePattern();
 			}else{
-				userChoicesArray[numPlayerClicks] = "#" + clickedBlock.id
+				userChoicesArray[numPlayerClicks] = gameBlockID
 				numPlayerClicks++;
 			}
 		}
@@ -54,7 +57,7 @@ function displayPattern(){
 	var color;
 	numPlayerClicks = 0;
 	patternArray = [];
-	playerTurn = false;
+	playersTurn = false;
 	level = level + 1;
 	$("#level").text(level + "/20")
 	$("#score").text(score)
@@ -92,7 +95,7 @@ function comparePattern(){
 function nextLevel(){
 	alert("Level up!");
 	score = score + 1.5*level*1100
-	clickedBlock = null;
+
 	$("#comp-turn").css("display","block")
 	$("#player-turn").css("display","none")
 	displayPattern();
@@ -103,7 +106,7 @@ function gameOver(){
 	level = 0;
 	score = 0;
 	playerTurn = false;
-	clickedBlock = null;
+
 	$("#comp-turn").css("display","block")
 	$("#player-turn").css("display","none")
   $("#play-window").css("display","none");
