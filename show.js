@@ -14,6 +14,7 @@ var GAME_OVER_MSG = "<span class='fail'>Game Over</span><br>You lose! Your final
 $(document).ready(function() {
     /* Click the start or start-over button. */
     $("#start,#start-over").click(function() {
+      level = 0;
       // Display play-window accordinly - if userChoicesArray is populated,
       // that means a game was just played.
       if (userChoicesArray.length != 0) {
@@ -23,7 +24,6 @@ $(document).ready(function() {
       } else {
           startGame();
       }
-      level = 0;
     });
 
     /* Click the quit button. */
