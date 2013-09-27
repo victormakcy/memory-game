@@ -1,0 +1,120 @@
+/* Start screen styles */
+#logo, #end-game-msg {
+  font-family: 'Junge', serif;
+  font-size: 70px;
+  padding-top:20%;
+  text-align: center;
+}
+
+#end-game-msg {
+    padding-top: 15%;
+}
+
+#start, #start-over {
+  font-family: 'Ranchers', cursive;
+  font-size:50px;
+  padding-top:1%;
+  text-align: center;
+}
+
+#start:hover, #quit:hover, #start-over:hover {
+	cursor: pointer;
+	color:#4e4e4e;
+}
+
+#start-window, #end-game-window {
+  display:block;
+  position:relative;
+  width:100%;
+  height:100%;
+  background-color: #FFFFFF;
+}
+
+#end-game-window {
+    border-bottom: 1px solid black;
+}
+
+/* Main game styles */
+#play-window{
+  position:absolute;
+  display:block;
+  display:none;
+  height:100%;
+  width:100%;
+}
+
+.game-block{
+  border:1px solid #000;
+  position:absolute;
+  width:130px;
+  height:130px;
+  margin-bottom: 10px;
+}
+
+#game-block1{
+  left:325px;
+  top: 100px;
+  border-color:#0f7ac5;
+}
+
+#game-block2{
+  left:170px;
+  top:210px;
+  border-color:#14a88e;
+}
+
+#game-block3{
+  left:170px;
+  top:350px;
+  border-color:#3fdf29;
+}
+
+#game-block4{
+  left:325px;
+  top:460px;
+  border-color:#aa2918;
+}
+
+#game-block5{
+  left:479px;
+  top:210px;
+  border-color:#dc30da;
+}
+
+#game-block6{
+  left:479px;
+  top:350px;
+  border-color:#901fe7;
+}
+
+#status-window{
+  position:absolute;
+  left:650px;
+  top:150px;
+}
+
+.level, .score, #notif-msg {
+  font-family: helvetica;
+  font-size: 30px;
+}
+
+#notif-msg {
+  position: relative;
+  top:80px;
+}
+
+#quit{
+  font-family: 'Ranchers', cursive;
+  font-size:50px;
+  position:absolute;
+  left:700px;
+  top:500px;
+}
+
+.fail {
+    color: red;
+}
+
+.success {
+    color:#168d10
+}
