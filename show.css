@@ -1,3 +1,7 @@
+html,body {
+  margin: 0;
+}
+
 /* Start screen styles */
 #logo, #end-game-msg {
   font-family: 'Junge', serif;
@@ -31,13 +35,13 @@
 }
 
 #end-game-window {
-    border-bottom: 1px solid black;
+  display:none;
+  border-bottom: 1px solid black;
 }
 
 /* Main game styles */
 #play-window{
   position:absolute;
-  display:block;
   display:none;
   height:100%;
   width:100%;

@@ -41,14 +41,14 @@ $(document).ready(function() {
         if (playersTurn) {
             var gameBlockID = '#' + this.id;
             var highlightColor = $(this).css('border-color');
-            
+
             // Animate the background-color
             // Can be done using JQuery UI Color Plugin, but for now, use timeout
             $(gameBlockID).css('background-color', $(gameBlockID).css('border-color'));
-            
+
             // Animate back to white in 400ms
             setTimeout(function() { $(gameBlockID).css('background-color', '#FFFFFF'); }, 400);
-            
+
             // Compare
             if(numPlayerClicks == (level + 1)){
                 userChoicesArray[numPlayerClicks] = gameBlockID
